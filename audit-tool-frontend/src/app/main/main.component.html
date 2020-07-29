@@ -1,0 +1,18 @@
+<div class="main">
+  <h2>Main</h2>
+
+  <p>
+
+  <input #inputFile type="file" ng-model="fileContent" (change)="onChange($event.target.files)" accept="text/plain,.html,.css,.sql">
+  <button (click)="resetInputFile()">Clear</button>
+
+  <div *ngIf="fileContent != null">
+    <h3>Contenu du fichier</h3>
+    <pre>{{fileContent}}</pre>
+  </div>
+
+  <div *ngIf="fileContent == null">
+    <h3>Veuillez déposer un fichier</h3>
+  </div>
+
+</div>

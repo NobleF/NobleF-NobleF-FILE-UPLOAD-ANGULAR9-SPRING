@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class ="navbar">
+  <p><button mat-button (click)="sidenav.toggle()"><fa-icon [icon]='faBars'></fa-icon></button></p>
+  <div>Audit-tool</div>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidebar">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <ul><span><button mat-raised-button (click)="goToMain()" class="buttonSidebar">Main</button></span></ul>
+    <ul><span><button mat-raised-button (click)="goToOther()" class="buttonSidebar">Other</button></span></ul>
+    <ul><span><button mat-raised-button (click)="goToUpload()" class="buttonSidebar">Upload</button></span></ul>
+    <ul><span><button mat-raised-button (click)="goToSingleUpload()" class="buttonSidebar">Single File Upload</button></span></ul>
+    <ul><span><button mat-raised-button (click)="goToMultiUpload()" class="buttonSidebar">Multi File Upload</button></span></ul>
+    <ul><span><button mat-raised-button (click)="goToDownload()" class="buttonSidebar">Download</button></span></ul>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><router-outlet></router-outlet></p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<p>
